@@ -7,7 +7,7 @@ class Covid(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
+    @commands.command(pass_context=True, aliases=["s", "covid19"])
     async def stats(self, ctx, country):
         response = requests.get(f'https://api.covid19api.com/total/country/{country}')
         data = response.json()
