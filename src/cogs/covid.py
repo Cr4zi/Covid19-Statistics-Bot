@@ -27,4 +27,4 @@ class Covid(commands.Cog):
 
 def setup(bot):
     bot.add_cog(Covid(bot))
-    print('load cog covid stats')
+    print('Load Covid cog')
