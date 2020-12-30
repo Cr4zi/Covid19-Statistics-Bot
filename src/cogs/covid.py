@@ -9,9 +9,9 @@ class Covid(commands.Cog):
 
     @commands.command()
     async def stats(self, ctx, country):
-        response = requests.get(f'https://api.covid19api.com/dayone/country/{country}')
-        print('Finished requests')
+        response = requests.get(f'https://api.covid19api.com/total/country/{country}')
         data = response.json()
+        print(f'Finished requests from {data[-1]["Country"]}')
 
         embed = discord.Embed(
             title=f"{data[-1]['Country']} covid19 statistics",
