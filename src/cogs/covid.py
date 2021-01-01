@@ -9,7 +9,7 @@ class Covid(commands.Cog):
 
     @commands.command(pass_context=True, aliases=["s", "covid19"])
     async def stats(self, ctx, country):
-        response = requests.get(f'https://api.covid19api.com/total/country/{country}')
+        response = requests.get(f'https://api.covid19api.com/total/country/{country}', verify=False)
         data = response.json()
         print(f'Finished requests from {data[-1]["Country"]}')
 
