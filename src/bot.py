@@ -24,8 +24,11 @@ client.remove_command('help')
 async def on_ready():
     print(f'Connected as {client.user}')
 
+initial_cogs = ['cogs.covid', 'cogs.helpcommand']
+
 if __name__ == '__main__':
-    client.load_extension('cogs.covid')
+    for cog in initial_cogs:
+        client.load_extension(cog)
 
 
 client.run(os.getenv('BOT_TOKEN'))
